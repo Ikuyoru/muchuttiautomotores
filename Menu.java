@@ -78,21 +78,35 @@ public class Menu {
         }
     }
 
-    public void tratarBajaAuto(){
+    public void tratarBajaAuto() {
         Scanner sc = new Scanner(System.in);
-        int id;
-        listaAuto.listar();
-        System.out.print("Ingrese el ID del Auto que desea ELIMINAR: ");
-        id = sc.nextInt();
-        listaAuto.buscar_borrar_Auto(id);
-        System.out.println("\nLista actualizada");
-        listaAuto.listar();
-        System.out.println("\n");
+        int continuar = 1;
+        String texto;
+        while (continuar == 1) {
+            int id;
+            listaAuto.listar();
+            System.out.print("Ingrese el ID del Auto que desea ELIMINAR: ");
+            id = sc.nextInt();
+            listaAuto.buscar_borrar_Auto(id);
+            System.out.println("\nLista actualizada");
+            listaAuto.listar();
+            System.out.println("\n");
+            System.out.println("Desea dar de baja otro auto? 1. Si / X. No");
+            System.out.print("Opcion: ");
+            texto = sc.next();
+            continuar = (Integer.parseInt(texto));
+        if (continuar != 1) {
+            mostrar();
+            }
+        }
     }
 
     public void tratarModAuto(){
         Scanner sc = new Scanner(System.in);
         int id;
+        int continuar = 1;
+        String texto;
+        while (continuar == 1) {
         listaAuto.listar();
         System.out.println("\n");
         System.out.print("Ingrese el ID del Auto que desea MODIFICAR: ");
@@ -101,6 +115,14 @@ public class Menu {
         System.out.println("\nLista actualizada");
         listaAuto.listar();
         System.out.println("\n");
+            System.out.println("Desea modificar otra parte de un auto? 1. Si / X. No");
+            System.out.print("Opcion: ");
+            texto = sc.next();
+            continuar = (Integer.parseInt(texto));
+            if (continuar != 1) {
+                mostrar();
+            }
+        }
     }
 
     // ********************************************************************
@@ -151,13 +173,24 @@ public class Menu {
     public void tratarBajaMoto(){
         Scanner sc = new Scanner(System.in);
         int id;
-        listaMoto.listar();
-        System.out.print("Ingrese el ID de la Moto que desea ELIMINAR: ");
-        id = sc.nextInt();
-        listaMoto.buscar_borrar_Moto(id);
-        System.out.println("\nLista actualizada");
-        listaMoto.listar();
-        System.out.println("\n");
+        int continuar = 1;
+        String texto;
+        while (continuar == 1) {
+            listaMoto.listar();
+            System.out.print("Ingrese el ID de la Moto que desea ELIMINAR: ");
+            id = sc.nextInt();
+            listaMoto.buscar_borrar_Moto(id);
+            System.out.println("\nLista actualizada");
+            listaMoto.listar();
+            System.out.println("\n");
+            System.out.println("Desea dar de baja otra moto? 1. Si / X. No");
+            System.out.print("Opcion: ");
+            texto = sc.next();
+            continuar = (Integer.parseInt(texto));
+            if (continuar != 1) {
+                mostrar();
+            }
+        }
     }
 
     public void tratarModMoto(){
@@ -206,19 +239,30 @@ public class Menu {
             if (continuar != 1) {
                 mostrar();
             }
-    }
+        }
     }
 
     public void tratarBajaCamioneta(){
         Scanner sc = new Scanner(System.in);
         int id;
-        listaCamioneta.listar();
-        System.out.print("Ingrese el ID de la Camioneta que desea ELIMINAR: ");
-        id = sc.nextInt();
-        listaCamioneta.buscar_borrar_Camioneta(id);
-        System.out.println("\nLista actualizada");
-        listaCamioneta.listar();
-        System.out.println("\n");
+        int continuar = 1;
+        String texto;
+        while (continuar == 1) {
+            listaCamioneta.listar();
+             System.out.print("Ingrese el ID de la Camioneta que desea ELIMINAR: ");
+            id = sc.nextInt();
+            listaCamioneta.buscar_borrar_Camioneta(id);
+            System.out.println("\nLista actualizada");
+            listaCamioneta.listar();
+            System.out.println("\n");
+            System.out.println("Desea dar de baja otra camioneta? 1. Si / X. No");
+            System.out.print("Opcion: ");
+            texto = sc.next();
+            continuar = (Integer.parseInt(texto));
+            if (continuar != 1) {
+                mostrar();
+            }
+        }
     }
 
     public void tratarModCamioneta(){
@@ -233,44 +277,44 @@ public class Menu {
     //****************** TRATAMIENTO ABM CAMIONES *************************
 
     public void tratarAltaCamion(){
-            Scanner sc = new Scanner(System.in);
-            String texto;
-            int texto2;
-            int continuar = 1;
-            while (continuar == 1) {
-                Camion camion = new Camion();
-                System.out.print("Ingrese ID: ");
-                texto = sc.next();
-                camion.setId(Integer.parseInt(texto));
-                System.out.print("Ingrese marca: ");
-                texto = sc.next();
-                camion.setMarca(texto);
-                System.out.print("Modelo: ");
-                texto = sc.next();
-                camion.setModelo(texto);
-                System.out.print("Año: " );
-                texto = sc.next();
-                camion.setAño(Integer.parseInt(texto));
-                System.out.print("Color: " );
-                texto = sc.next();
-                camion.setColor(texto);
-                System.out.print("Cantidad de km: " );
-                texto = sc.next();
-                camion.setCantkm(Integer.parseInt(texto));
-                System.out.print("Precio: " );
-                texto = sc.next();
-                camion.setPrecio(Integer.parseInt(texto));
-                System.out.println("Potencia: ");
-                texto2 = sc.nextInt();
-                camion.setPotencia(texto2);
-                listaCamion.agregar(camion);
-                System.out.println("Desea dar de alta otro camion? 1. Si / X. No");
-                System.out.print("Opcion: ");
-                texto = sc.next();
-                continuar = (Integer.parseInt(texto));
-                if (continuar != 1) {
-                    mostrar();
-                }
+        Scanner sc = new Scanner(System.in);
+        String texto;
+        int texto2;
+        int continuar = 1;
+        while (continuar == 1) {
+            Camion camion = new Camion();
+            System.out.print("Ingrese ID: ");
+            texto = sc.next();
+            camion.setId(Integer.parseInt(texto));
+            System.out.print("Ingrese marca: ");
+            texto = sc.next();
+            camion.setMarca(texto);
+            System.out.print("Modelo: ");
+            texto = sc.next();
+            camion.setModelo(texto);
+            System.out.print("Año: " );
+            texto = sc.next();
+            camion.setAño(Integer.parseInt(texto));
+            System.out.print("Color: " );
+            texto = sc.next();
+            camion.setColor(texto);
+            System.out.print("Cantidad de km: " );
+            texto = sc.next();
+            camion.setCantkm(Integer.parseInt(texto));
+            System.out.print("Precio: " );
+            texto = sc.next();
+            camion.setPrecio(Integer.parseInt(texto));
+            System.out.println("Potencia: ");
+            texto2 = sc.nextInt();
+            camion.setPotencia(texto2);
+            listaCamion.agregar(camion);
+            System.out.println("Desea dar de alta otro camion? 1. Si / X. No");
+            System.out.print("Opcion: ");
+            texto = sc.next();
+            continuar = (Integer.parseInt(texto));
+            if (continuar != 1) {
+                mostrar();
+            }
         }
 
     }
@@ -278,18 +322,29 @@ public class Menu {
     public void tratarBajaCamion(){
         Scanner sc = new Scanner(System.in);
         int id;
-        listaCamion.listar();
-        System.out.print("Ingrese el ID del Camion que desea ELIMINAR: ");
-        id = sc.nextInt();
-        listaCamion.buscar_borrar_Camion(id);
-        System.out.println("\nLista actualizada");
-        listaCamion.listar();
-        System.out.println("\n");
+        int continuar = 1;
+        String texto;
+        while (continuar == 1) {
+          listaCamion.listar();
+         System.out.print("Ingrese el ID del Camion que desea ELIMINAR: ");
+         id = sc.nextInt();
+         listaCamion.buscar_borrar_Camion(id);
+         System.out.println("\nLista actualizada");
+         listaCamion.listar();
+          System.out.println("\n");
+          System.out.println("Desea dar de baja otro camion? 1. Si / X. No");
+          System.out.print("Opcion: ");
+          texto = sc.next();
+         continuar = (Integer.parseInt(texto));
+          if (continuar != 1) {
+            mostrar();
+        }
+    }
     }
 
     public void tratarModCamion(){
 
-            tratarAltaCamion();
+        tratarAltaCamion();
     }
 
     // ********************************************************************
@@ -401,4 +456,3 @@ public class Menu {
         }
     }
 }
-
