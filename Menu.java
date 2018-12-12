@@ -95,8 +95,8 @@ public class Menu {
             System.out.print("Opcion: ");
             texto = sc.next();
             continuar = (Integer.parseInt(texto));
-        if (continuar != 1) {
-            mostrar();
+            if (continuar != 1) {
+                 mostrar();
             }
         }
     }
@@ -107,14 +107,14 @@ public class Menu {
         int continuar = 1;
         String texto;
         while (continuar == 1) {
-        listaAuto.listar();
-        System.out.println("\n");
-        System.out.print("Ingrese el ID del Auto que desea MODIFICAR: ");
-        id = sc.nextInt();
-        listaAuto.buscar_modificar_Auto(id);
-        System.out.println("\nLista actualizada");
-        listaAuto.listar();
-        System.out.println("\n");
+            listaAuto.listar();
+            System.out.println("\n");
+            System.out.print("Ingrese el ID del Auto que desea MODIFICAR: ");
+            id = sc.nextInt();
+            listaAuto.buscar_modificar_Auto(id);
+            System.out.println("\nLista actualizada");
+            listaAuto.listar();
+            System.out.println("\n");
             System.out.println("Desea modificar otra parte de un auto? 1. Si / X. No");
             System.out.print("Opcion: ");
             texto = sc.next();
